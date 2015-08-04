@@ -1,0 +1,23 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"name": "Silicon Valley",
+			"description": "Protectorate of Sir JD, Baron of Silicon Valley"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[-122.014, 37.699],
+					[-122.412, 37.533],
+					[-122.123, 37.247],
+					[-121.626, 37.103],
+					[-121.717, 37.391],
+					[-122.014, 37.699]
+				]
+			]
+		}
+	}]
+}

@@ -1,0 +1,27 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"name": "The Gold Coast, Ghana",
+			"description": "Protectorate of Sir Dean Bertram, Baron of the Gold Coast"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[-0.355, 5.359],
+					[-0.372, 5.528],
+					[-0.373, 5.545],
+					[-0.838, 5.331],
+					[-1.035, 5.305],
+					[-1.575, 5.127],
+					[-1.565, 4.922],
+					[-1.026, 5.091],
+					[-0.753, 5.115],
+					[-0.355, 5.359]
+				]
+			]
+		}
+	}]
+}

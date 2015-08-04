@@ -1,0 +1,22 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"name": "Neutral-Moresnet, Belgium",
+			"description": "Protectorate of Sir Ralf Nellessen, Baron of Neutral-Moresnet, Belgium, underneath the Protection of Sir Steven Von Pelsmaekers, Grand Duke of Belgium and France"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[6.021, 50.754],
+					[5.998, 50.708],
+					[6.003, 50.709],
+					[6.019, 50.717],
+					[6.021, 50.754]
+				]
+			]
+		}
+	}]
+}

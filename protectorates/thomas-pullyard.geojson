@@ -1,0 +1,26 @@
+{
+	"type": "FeatureCollection",
+	"features": [{
+		"type": "Feature",
+		"properties": {
+			"name": "Bahrain",
+			"description": "Protectorate of Sir Thomas Pullyard, Baron of Bahrain"
+		},
+		"geometry": {
+			"type": "Polygon",
+			"coordinates": [
+				[
+					[50.579, 25.71],
+					[50.646, 25.806],
+					[50.696, 26.139],
+					[50.744, 26.188],
+					[50.659, 26.36],
+					[50.529, 26.304],
+					[50.311, 26.227],
+					[50.482, 25.801],
+					[50.579, 25.71]
+				]
+			]
+		}
+	}]
+}

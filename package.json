@@ -1,0 +1,21 @@
+{
+  "name": "no-agenda-peerage",
+  "version": "1.0.0",
+  "description": "Protectorates of the No Agenda Round Table.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoAgenda/peerage.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NoAgenda/peerage/issues"
+  },
+  "homepage": "https://github.com/NoAgenda/peerage#readme",
+  "dependencies": {
+    "async": "^1.4.0",
+    "geojson-area": "^0.2.0",
+    "geojson-merge": "^0.1.0",
+    "geojson-precision": "^0.4.0",
+    "js-beautify": "^1.5.10"
+  }
+}
