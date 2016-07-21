@@ -11,6 +11,10 @@
     "url": "https://github.com/NoAgenda/peerage/issues"
   },
   "homepage": "https://github.com/NoAgenda/peerage#readme",
+  "scripts": {
+    "build": "npm run trim && node build.js",
+    "trim": "node trim.js"
+  },
   "dependencies": {
     "async": "^2.0.0",
     "geojson-area": "^0.2.1",

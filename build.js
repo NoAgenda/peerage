@@ -1,6 +1,7 @@
-#!/usr/bin/env node
 /* eslint-env node */
+
 'use strict';
+
 var async = require('async');
 var fs = require('fs');
 var path = require('path');
@@ -9,8 +10,8 @@ var merge = require('geojson-merge');
 var gp = require('geojson-precision');
 var beautify = require('js-beautify');
 
-async.map(fs.readdirSync(path.resolve(__dirname, '../protectorates')), function(file, done) {
-	file = path.resolve(__dirname, '../protectorates', file);
+async.map(fs.readdirSync(path.resolve(__dirname, './protectorates')), function(file, done) {
+	file = path.resolve(__dirname, './protectorates', file);
 
 	fs.readFile(file, function(err, data) {
 		if (err) {
@@ -39,7 +40,7 @@ async.map(fs.readdirSync(path.resolve(__dirname, '../protectorates')), function(
 
 	var merged = merge(protectorates);
 	var trimmed = gp.parse(merged, 3);
-	var outFile = path.resolve(__dirname, '../peerage.geojson');
+	var outFile = path.resolve(__dirname, './peerage.geojson');
 
 	fs.writeFileSync(outFile, beautify(JSON.stringify(trimmed), {
 		'indent_with_tabs': true,

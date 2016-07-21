@@ -1,14 +1,14 @@
-#!/usr/bin/env node
 /* eslint-env node */
 'use strict';
+
 var async = require('async');
 var fs = require('fs');
 var path = require('path');
 var gp = require('geojson-precision');
 var beautify = require('js-beautify');
 
-async.each(fs.readdirSync(path.resolve(__dirname, '../protectorates')), function(file, done) {
-	file = path.resolve(__dirname, '../protectorates', file);
+async.each(fs.readdirSync(path.resolve(__dirname, './protectorates')), function(file, done) {
+	file = path.resolve(__dirname, './protectorates', file);
 
 	fs.readFile(file, function(err, data) {
 		if (err) {
