@@ -12,10 +12,10 @@
   },
   "homepage": "https://github.com/NoAgenda/peerage#readme",
   "dependencies": {
-    "async": "^1.4.0",
-    "geojson-area": "^0.2.0",
+    "async": "^2.0.0",
+    "geojson-area": "^0.2.1",
     "geojson-merge": "^0.1.0",
     "geojson-precision": "^0.4.0",
-    "js-beautify": "^1.5.10"
+    "js-beautify": "^1.6.3"
   }
 }
