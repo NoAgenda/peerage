@@ -1,49 +1,50 @@
 /* eslint-env node */
-
 'use strict';
 
-var async = require('async');
-var fs = require('fs');
-var path = require('path');
-var area = require('geojson-area');
-var merge = require('geojson-merge');
-var gp = require('geojson-precision');
-var beautify = require('js-beautify');
+const { promisify } = require('util');
+const { map } = require('async');
+const path = require('path');
+const fs = require('fs');
+const readFileAsync = promisify(fs.readFile);
+const area = require('@turf/area');
+const { featureCollection } = require('@turf/helpers');
+const combine = require('@turf/combine');
+const truncate = require('@turf/truncate');
+const beautify = require('js-beautify');
 
-async.map(fs.readdirSync(path.resolve(__dirname, './protectorates')), function(file, done) {
-	file = path.resolve(__dirname, './protectorates', file);
+async function main() {
+	const protectorateDir = path.resolve(__dirname, './protectorates');
+	const protectorates = fs.readdirSync(protectorateDir);
 
-	fs.readFile(file, function(err, data) {
+	map(protectorates, async (file) => {
+		file = path.resolve(protectorateDir, file);
+
+		const data = await readFileAsync(file);
+		const json = JSON.parse(data);
+
+		return json;
+	}, (err, protectorates) => {
 		if (err) {
-			done(err);
+			console.error(err);
 			return;
 		}
 
-		try {
-			done(null, JSON.parse(data));
-		}
-		catch (e) {
-			done(e);
-		}
+		protectorates.sort(function(a, b) {
+			return area(a) > area(b) ? -1 : 1;
+		});
+
+		const protectorateFeatures = protectorates.map((protectorate) => protectorate.features);
+		const merged = featureCollection([].concat(...protectorateFeatures));
+		const trimmed = truncate(merged, 3);
+
+		const beautified = beautify(JSON.stringify(trimmed), {
+			'indent_with_tabs': true,
+			'brace_style': 'end-expand'
+		});
+
+		const outFile = path.resolve(__dirname, './peerage.geojson');
+		fs.writeFileSync(outFile, beautified);
 	});
-}, function(err, protectorates) {
-	if (err) {
-		console.error(err);
-		return;
-	}
+}
 
-	protectorates.sort(function(a, b) {
-		var areaOfA = area.geometry(a.features[0].geometry);
-		var areaOfB = area.geometry(b.features[0].geometry);
-		return areaOfA > areaOfB ? -1 : 1;
-	});
-
-	var merged = merge(protectorates);
-	var trimmed = gp.parse(merged, 3);
-	var outFile = path.resolve(__dirname, './peerage.geojson');
-
-	fs.writeFileSync(outFile, beautify(JSON.stringify(trimmed), {
-		'indent_with_tabs': true,
-		'brace_style': 'end-expand'
-	}));
-});
+main();
