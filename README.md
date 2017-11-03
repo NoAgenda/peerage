@@ -6,12 +6,13 @@
 
 ## Add your protectorate to the map
 
-There are two ways to have your protectorate added to the map:
+There are three ways to have your protectorate added to the map:
 
-1. [Submit an issue](https://github.com/NoAgenda/peerage/issues/new)
-2. Email [peerage@noagendahr.org](mailto:peerage@noagendahr.org)
+1. Email [peerage@noagendahr.org](mailto:peerage@noagendahr.org)
+2. [Submit an issue](https://github.com/NoAgenda/peerage/issues/new)
+3. [Fork this repo](https://github.com/NoAgenda/peerage/fork), follow the [contributing guide](.github/CONTRIBUTING.md), and submit a pull request
 
-Make sure to include the following info:
+Make sure to include the following info when emailing or creating an issue:
 
 1. Your name and title
 2. The location of your protectorate
