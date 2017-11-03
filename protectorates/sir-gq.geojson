@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Maryland",
-			"description": "Protectorate of Sir GQ, Baron of Maryland"
+			"description": "Protectorate of Sir GQ, Baron of Maryland",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

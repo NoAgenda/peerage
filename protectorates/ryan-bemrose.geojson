@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Puget Sound, excluding PRoS",
-			"description": "Protectorate of Sir Ryan Bemrose, Baron of Puget Sound, excluding the People’s Republic of Seattle"
+			"description": "Protectorate of Sir Ryan Bemrose, Baron of Puget Sound, excluding the People’s Republic of Seattle",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "Polygon",

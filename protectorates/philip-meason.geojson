@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Wales, United Kingdom",
-			"description": "Protectorate of Sir Philip Meason, Baron of Wales"
+			"description": "Protectorate of Sir Philip Meason, Baron of Wales",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "The Gold Coast, Ghana",
-			"description": "Protectorate of Sir Dean Bertram, Baron of the Gold Coast"
+			"description": "Protectorate of Sir Dean Bertram, Baron of the Gold Coast",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "Polygon",

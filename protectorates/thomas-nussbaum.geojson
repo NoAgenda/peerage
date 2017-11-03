@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Hampton Roads",
-			"description": "Protectorate of Sir Thomas Nussbaum, Baron of the Hampton Roads"
+			"description": "Protectorate of Sir Thomas Nussbaum, Baron of the Hampton Roads",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

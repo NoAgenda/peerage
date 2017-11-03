@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Poland",
-			"description": "Protectorate of Sir Adam, Baron of Poland"
+			"description": "Protectorate of Sir Adam, Baron of Poland",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Manhattan, New York, New York",
-			"description": "Protectorate of Dame Tanya Weiman, Baroness of Manhattan, New York, New York"
+			"description": "Protectorate of Dame Tanya Weiman, Baroness of Manhattan, New York, New York",
+			"title": "Baroness"
 		},
 		"geometry": {
 			"type": "Polygon",

@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Marin County, CA",
-			"description": "Protectorate of Sir Michael Miller, Viscount of Marin County"
+			"description": "Protectorate of Sir Michael Miller, Viscount of Marin County",
+			"title": "Viscount"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

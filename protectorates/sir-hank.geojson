@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Queens, NY",
-			"description": "Protectorate of Sir Hank, Viscount of Queens, New York"
+			"description": "Protectorate of Sir Hank, Viscount of Queens, New York",
+			"title": "Viscount"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

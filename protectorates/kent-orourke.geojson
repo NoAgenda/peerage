@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "The Potomac Highlands",
-			"description": "Protectorate of Sir Kent O’Rourke, Baron of the Potomac Highlands"
+			"description": "Protectorate of Sir Kent O’Rourke, Baron of the Potomac Highlands",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "Polygon",

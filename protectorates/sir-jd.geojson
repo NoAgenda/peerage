@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Silicon Valley",
-			"description": "Protectorate of Sir JD, Baron of Silicon Valley"
+			"description": "Protectorate of Sir JD, Baron of Silicon Valley",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "Polygon",

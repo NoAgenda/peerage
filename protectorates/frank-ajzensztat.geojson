@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Stonnington, Australia",
-			"description": "Protectorate of Sir Frank Ajzensztat, Baron of Stonnington"
+			"description": "Protectorate of Sir Frank Ajzensztat, Baron of Stonnington",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "Polygon",

@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Lake Travis",
-			"description": "Protectorate of Sir Keith Brown, Baron of Lake Travis"
+			"description": "Protectorate of Sir Keith Brown, Baron of Lake Travis",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "Polygon",

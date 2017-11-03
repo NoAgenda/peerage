@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Alberta, Canada",
-			"description": "Protectorate of Sir Robert Goshko, Earl of Alberta"
+			"description": "Protectorate of Sir Robert Goshko, Earl of Alberta",
+			"title": "Earl"
 		},
 		"geometry": {
 			"type": "Polygon",

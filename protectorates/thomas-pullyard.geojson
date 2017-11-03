@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Bahrain",
-			"description": "Protectorate of Sir Thomas Pullyard, Baron of Bahrain"
+			"description": "Protectorate of Sir Thomas Pullyard, Baron of Bahrain",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

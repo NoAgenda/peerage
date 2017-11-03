@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Tokyo Prefecture, Japan",
-			"description": "Protectorate of Sir Mark Dytham, Viscount of Tokyo and Dame Astrid Klein, Viscountess of Tokyo"
+			"description": "Protectorate of Sir Mark Dytham, Viscount of Tokyo and Dame Astrid Klein, Viscountess of Tokyo",
+			"title": "Viscount"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

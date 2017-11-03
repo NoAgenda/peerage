@@ -4,7 +4,9 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Charlotte, NC",
-			"description": "Protectorate of Sir Kevin Dills, Viscount of Charlotte"
+			"description": "Protectorate of Sir Kevin Dills, Viscount of Charlotte",
+			"title": "Viscount",
+			"proof": "http://naplay.it/964/2-14-19 "
 		},
 		"geometry": {
 			"type": "Polygon",

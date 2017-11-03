@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "FEMA Region IV",
-			"description": "Protectorate of Sir Dr. Sharkey, Earl of Grantham, FEMA Region IV, The Tennessee Valley and The Great Smoky Mountains"
+			"description": "Protectorate of Sir Dr. Sharkey, Earl of Grantham, FEMA Region IV, The Tennessee Valley and The Great Smoky Mountains",
+			"title": "Earl"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

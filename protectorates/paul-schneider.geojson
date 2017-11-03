@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Edmonton, Alberta, Canada",
-			"description": "Protectorate of Sir Paul Schneider, Baron of Edmonton"
+			"description": "Protectorate of Sir Paul Schneider, Baron of Edmonton",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

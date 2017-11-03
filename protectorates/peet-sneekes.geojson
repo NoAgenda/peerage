@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "North Holland and Friesland",
-			"description": "Protectorate of Sir Peet Sneekes, Baron of North Holland and Friesland"
+			"description": "Protectorate of Sir Peet Sneekes, Baron of North Holland and Friesland",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

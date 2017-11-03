@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Oregon",
-			"description": "Protectorate of Sir Dwayne Melancon, Earl of Mystery"
+			"description": "Protectorate of Sir Dwayne Melancon, Earl of Mystery",
+			"title": "Earl"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

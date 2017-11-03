@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Southern Orange County, CA",
-			"description": "Protectorate of Sir Borisav Marinov, Baron of Southern Orange County"
+			"description": "Protectorate of Sir Borisav Marinov, Baron of Southern Orange County",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "Polygon",

@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "The United Kingdom of Great Britian and Northern Ireland",
-			"description": "Protectorate of Sir Paul Vella, Baron of The United Kingdom of Great Britian and Northern Ireland"
+			"description": "Protectorate of Sir Paul Vella, Baron of The United Kingdom of Great Britian and Northern Ireland",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "British Columbia, Canada",
-			"description": "Protectorate of Sir Allan Bose, Baron of British Columbia, Canada"
+			"description": "Protectorate of Sir Allan Bose, Baron of British Columbia, Canada",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

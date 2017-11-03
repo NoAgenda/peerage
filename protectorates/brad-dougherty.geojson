@@ -4,7 +4,9 @@
 		"type": "Feature",
 		"properties": {
 			"name": "The Jersey Shore and Delaware Valley",
-			"description": "Protectorate of Sir Brad Dougherty, Viscount of the Jersey Shore and Delaware Valley"
+			"description": "Protectorate of Sir Brad Dougherty, Viscount of the Jersey Shore and Delaware Valley",
+			"title": "Viscount",
+			"proof": "http://naplay.it/976/4-38-10"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

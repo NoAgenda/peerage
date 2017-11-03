@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "The Treasure Valley",
-			"description": "Protectorate of Sir A.J. Rystad, Baron of Yellowstone and The Treasure Valley"
+			"description": "Protectorate of Sir A.J. Rystad, Baron of Yellowstone and The Treasure Valley",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "Polygon",

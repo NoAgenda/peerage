@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Carson Valley, NV",
-			"description": "Protectorate of Sir Kris Jacob, Baron of Carson Valley, NV"
+			"description": "Protectorate of Sir Kris Jacob, Baron of Carson Valley, NV",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "Polygon",

@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "North Georgia Mountains",
-			"description": "Protectorate of Sir Scott Spencer, Baron of the North Georgia Mountains"
+			"description": "Protectorate of Sir Scott Spencer, Baron of the North Georgia Mountains",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "Polygon",

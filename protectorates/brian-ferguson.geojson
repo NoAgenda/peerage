@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Costa Mesa, CA",
-			"description": "Protectorate of Sir Brian Ferguson, Baron of Costa Mesa, CA"
+			"description": "Protectorate of Sir Brian Ferguson, Baron of Costa Mesa, CA",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "Polygon",

@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Federal Reserve District 7",
-			"description": "Protectorate of Sir Sean Connelly, Viscount of Federal Reserve District 7"
+			"description": "Protectorate of Sir Sean Connelly, Viscount of Federal Reserve District 7",
+			"title": "Viscount"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

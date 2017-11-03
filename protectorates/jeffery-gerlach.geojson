@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "4th Congressional District of California",
-			"description": "Protectorate of Sir Jeffery Gerlach, Viscount of Placer County and the 4th Congressional District of California"
+			"description": "Protectorate of Sir Jeffery Gerlach, Viscount of Placer County and the 4th Congressional District of California",
+			"title": "Viscount"
 		},
 		"geometry": {
 			"type": "MultiPolygon",

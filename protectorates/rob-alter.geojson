@@ -4,7 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "São Paulo, Brazil",
-			"description": "Protectorate of Sir Rob Alter, Baron of São Paulo"
+			"description": "Protectorate of Sir Rob Alter, Baron of São Paulo",
+			"title": "Baron"
 		},
 		"geometry": {
 			"type": "MultiPolygon",
