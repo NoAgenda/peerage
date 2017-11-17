@@ -17,17 +17,15 @@
     "lint:js": "xo",
     "test": "npm-run-all lint:js lint:geojson"
   },
-  "dependencies": {
+  "devDependencies": {
     "@turf/area": "^4.7.3",
     "@turf/combine": "^4.7.3",
     "@turf/helpers": "^5.0.1",
     "@turf/truncate": "^4.7.3",
     "async": "^2.0.0",
-    "js-beautify": "^1.6.3"
-  },
-  "devDependencies": {
     "eslint-config-bdougherty": "^4.0.0",
     "geojsonlint": "^1.0.1",
+    "js-beautify": "^1.6.3",
     "npm-run-all": "^4.1.2",
     "xo": "^0.18.2"
   },
