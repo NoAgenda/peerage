@@ -12,7 +12,8 @@
   },
   "homepage": "https://github.com/NoAgenda/peerage#readme",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "test": "xo"
   },
   "dependencies": {
     "@turf/area": "^4.7.3",
@@ -20,6 +21,11 @@
     "@turf/helpers": "^5.0.1",
     "@turf/truncate": "^4.7.3",
     "async": "^2.0.0",
-    "js-beautify": "^1.6.3"
+    "eslint-config-bdougherty": "^4.0.0",
+    "js-beautify": "^1.6.3",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "extends": "bdougherty"
   }
 }

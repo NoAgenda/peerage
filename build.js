@@ -1,16 +1,15 @@
-/* eslint-env node */
 'use strict';
 
 const { promisify } = require('util');
-const { map } = require('async');
 const path = require('path');
 const fs = require('fs');
-const readFileAsync = promisify(fs.readFile);
+const { map } = require('async');
 const area = require('@turf/area');
 const { featureCollection } = require('@turf/helpers');
-const combine = require('@turf/combine');
 const truncate = require('@turf/truncate');
 const beautify = require('js-beautify');
+
+const readFileAsync = promisify(fs.readFile);
 
 async function main() {
 	const protectorateDir = path.resolve(__dirname, './protectorates');
@@ -29,7 +28,7 @@ async function main() {
 			return;
 		}
 
-		protectorates.sort(function(a, b) {
+		protectorates.sort((a, b) => {
 			return area(a) > area(b) ? -1 : 1;
 		});
 
@@ -38,8 +37,8 @@ async function main() {
 		const trimmed = truncate(merged, 3);
 
 		const beautified = beautify(JSON.stringify(trimmed), {
-			'indent_with_tabs': true,
-			'brace_style': 'end-expand'
+			indent_with_tabs: true, // eslint-disable-line camelcase
+			brace_style: 'end-expand' // eslint-disable-line camelcase
 		});
 
 		const outFile = path.resolve(__dirname, './peerage.geojson');
