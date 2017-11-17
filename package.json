@@ -12,8 +12,7 @@
   },
   "homepage": "https://github.com/NoAgenda/peerage#readme",
   "scripts": {
-    "build": "node build.js",
-    "trim": "node trim.js"
+    "build": "node build.js"
   },
   "dependencies": {
     "@turf/area": "^4.7.3",
