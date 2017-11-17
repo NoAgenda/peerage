@@ -13,6 +13,7 @@
   "homepage": "https://github.com/NoAgenda/peerage#readme",
   "scripts": {
     "build": "node build.js",
+    "normalize": "node normalize.js",
     "lint:geojson": "geojsonlint peerage.geojson protectorates/",
     "lint:js": "xo",
     "test": "npm-run-all lint:js lint:geojson"
@@ -31,5 +32,8 @@
   },
   "xo": {
     "extends": "bdougherty"
+  },
+  "dependencies": {
+    "@turf/rewind": "^5.0.4"
   }
 }

@@ -15,7 +15,7 @@ There are two primary sources for shapefiles that I’ve found:
 1. Country data from [DIVA-GIS](http://www.diva-gis.org/gData)
 2. Congressional districts from [The United States Project](https://github.com/unitedstates/districts)
 
-Those only cover specific administrative regions, however. 
+Those only cover specific administrative regions, however.
 
 #### Convert a shapefile to geojson
 
@@ -65,13 +65,17 @@ A separate file is created for each Knight. Each one should be a FeatureCollecti
 			"proof": "[No Agenda Player short link]"
 		},
 		"geometry": {
-			
+
 		}
 	}]
 }
 ```
 
-Pull out the Geometry object from the simplified file and insert it into the protectorate file.
+Pull out the Geometry object from the simplified file and insert it into the protectorate file. Then, run the normalize script:
+
+```
+$ npm run normalize
+```
 
 ### 5. Generate the full peerage map
 
