@@ -12,10 +12,12 @@
   },
   "homepage": "https://github.com/NoAgenda/peerage#readme",
   "scripts": {
-    "build": "node build.js",
-    "normalize": "node normalize.js",
     "lint:geojson": "geojsonlint peerage.geojson protectorates/",
     "lint:js": "xo",
+    "normalize": "node normalize.js",
+    "compile": "node build.js",
+    "generate-map": "node generate-map.js",
+    "build": "npm-run-all normalize compile generate-map",
     "test": "npm-run-all lint:js lint:geojson"
   },
   "devDependencies": {
@@ -24,8 +26,13 @@
     "@turf/helpers": "^5.0.1",
     "@turf/truncate": "^4.7.3",
     "async": "^2.0.0",
+    "electron-screenshot-service": "^4.0.3",
     "eslint-config-bdougherty": "^4.0.0",
     "geojsonlint": "^1.0.1",
+    "got": "^8.0.0",
+    "imagemin": "^5.3.1",
+    "imagemin-advpng": "^4.0.0",
+    "imagemin-pngcrush": "^5.1.0",
     "js-beautify": "^1.6.3",
     "npm-run-all": "^4.1.2",
     "xo": "^0.18.2"
