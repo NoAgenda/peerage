@@ -2,18 +2,18 @@
 
 const { promisify } = require('util');
 const path = require('path');
-const fs = require('fs');
+const { readFile, readdirSync, writeFileSync } = require('fs');
 const { map } = require('async');
 const area = require('@turf/area');
 const { featureCollection } = require('@turf/helpers');
 const truncate = require('@turf/truncate');
 const beautify = require('js-beautify');
 
-const readFileAsync = promisify(fs.readFile);
+const readFileAsync = promisify(readFile);
 
 async function main() {
 	const protectorateDir = path.resolve(__dirname, './protectorates');
-	const protectorates = fs.readdirSync(protectorateDir);
+	const protectorates = readdirSync(protectorateDir);
 
 	map(protectorates, async (file) => {
 		file = path.resolve(protectorateDir, file);
@@ -44,7 +44,7 @@ async function main() {
 		});
 
 		const outFile = path.resolve(__dirname, './peerage.geojson');
-		fs.writeFileSync(outFile, beautified);
+		writeFileSync(outFile, beautified);
 	});
 }
 

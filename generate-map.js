@@ -1,15 +1,15 @@
 'use strict';
 const { promisify } = require('util');
 const path = require('path');
-const fs = require('fs');
+const { readFile, writeFile } = require('fs');
 const got = require('got');
 const screenshot = require('electron-screenshot-service');
 const imagemin = require('imagemin');
 const imageminAdvpng = require('imagemin-advpng');
 const imageminPngcrush = require('imagemin-pngcrush');
 
-const readFileAsync = promisify(fs.readFile);
-const writeFileAsync = promisify(fs.writeFile);
+const readFileAsync = promisify(readFile);
+const writeFileAsync = promisify(writeFile);
 
 const createGist = async (filename, contents, description = 'A Gist') => {
 	const json = {

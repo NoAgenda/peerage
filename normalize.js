@@ -2,18 +2,18 @@
 
 const { promisify } = require('util');
 const path = require('path');
-const fs = require('fs');
+const { readFile, writeFile, readdirSync } = require('fs');
 const { each } = require('async');
 const beautify = require('js-beautify');
 const rewind = require('@turf/rewind');
 const truncate = require('@turf/truncate');
 
-const readFileAsync = promisify(fs.readFile);
-const writeFileAsync = promisify(fs.writeFile);
+const readFileAsync = promisify(readFile);
+const writeFileAsync = promisify(writeFile);
 
 async function main() {
 	const protectorateDir = path.resolve(__dirname, './protectorates');
-	const protectorates = fs.readdirSync(protectorateDir).map((file) => {
+	const protectorates = readdirSync(protectorateDir).map((file) => {
 		return path.resolve(__dirname, './protectorates', file);
 	});
 
