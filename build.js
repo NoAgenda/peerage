@@ -34,7 +34,9 @@ async function main() {
 
 		const protectorateFeatures = protectorates.map((protectorate) => protectorate.features);
 		const merged = featureCollection([].concat(...protectorateFeatures));
-		const trimmed = truncate(merged, 3);
+		const trimmed = truncate(merged, {
+			precision: 3
+		});
 
 		const beautified = beautify(JSON.stringify(trimmed), {
 			indent_with_tabs: true, // eslint-disable-line camelcase

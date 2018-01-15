@@ -2,6 +2,7 @@
   "name": "no-agenda-peerage",
   "version": "1.0.0",
   "description": "Protectorates of the No Agenda Round Table.",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NoAgenda/peerage.git"
@@ -21,26 +22,24 @@
     "test": "npm-run-all lint:js lint:geojson"
   },
   "devDependencies": {
-    "@turf/area": "^4.7.3",
-    "@turf/combine": "^4.7.3",
-    "@turf/helpers": "^5.0.1",
-    "@turf/truncate": "^4.7.3",
+    "@turf/area": "^5.1.5",
+    "@turf/combine": "^5.1.5",
+    "@turf/helpers": "^5.1.5",
+    "@turf/rewind": "^5.1.5",
+    "@turf/truncate": "^5.1.5",
     "async": "^2.0.0",
     "electron-screenshot-service": "^4.0.3",
-    "eslint-config-bdougherty": "^4.0.0",
+    "eslint-config-bdougherty": "^4.1.1",
     "geojsonlint": "^1.0.1",
-    "got": "^8.0.0",
+    "got": "^8.0.2",
     "imagemin": "^5.3.1",
     "imagemin-advpng": "^4.0.0",
     "imagemin-pngcrush": "^5.1.0",
-    "js-beautify": "^1.6.3",
+    "js-beautify": "^1.7.5",
     "npm-run-all": "^4.1.2",
     "xo": "^0.18.2"
   },
   "xo": {
     "extends": "bdougherty"
-  },
-  "dependencies": {
-    "@turf/rewind": "^5.0.4"
   }
 }
