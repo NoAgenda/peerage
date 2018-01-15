@@ -3,15 +3,17 @@ const { promisify } = require('util');
 const path = require('path');
 const { readFile, writeFile } = require('fs');
 const got = require('got');
-const screenshot = require('electron-screenshot-service');
 const imagemin = require('imagemin');
 const imageminAdvpng = require('imagemin-advpng');
 const imageminPngcrush = require('imagemin-pngcrush');
+const Listr = require('listr');
+const opn = require('opn');
+const screenshot = require('electron-screenshot-service');
 
 const readFileAsync = promisify(readFile);
 const writeFileAsync = promisify(writeFile);
 
-const createGist = async (filename, contents, description = 'A Gist') => {
+async function createGist(filename, contents, description = 'A Gist') {
 	const json = {
 		description,
 		public: false,
@@ -31,13 +33,9 @@ const createGist = async (filename, contents, description = 'A Gist') => {
 		api: response.body.url,
 		html: response.body.html_url
 	};
-};
+}
 
-const deleteGist = async (url) => {
-	await got.delete(url);
-};
-
-const getIframeUrl = async (gistUrl) => {
+async function getIframeUrl(gistUrl) {
 	const url = `${gistUrl}.js`;
 	const response = await got(url);
 	const matches = response.body.match(/<iframe class=\\"render-viewer\\" src=\\"(.*)\\" sandbox/);
@@ -47,9 +45,9 @@ const getIframeUrl = async (gistUrl) => {
 	}
 
 	return null;
-};
+}
 
-const takeScreenshot = async (url, width = 1024, height = 768) => {
+async function takeScreenshot(url, width = 1024, height = 768) {
 	try {
 		const img = await screenshot({
 			url,
@@ -71,42 +69,56 @@ const takeScreenshot = async (url, width = 1024, height = 768) => {
 
 		screenshot.close();
 		return img.data;
-	} catch (err) {
+	}
+	catch (err) {
 		screenshot.close();
 		return null;
 	}
-};
+}
 
-const optimizeImage = async (buffer) => {
+async function optimizeImage(buffer) {
 	return imagemin.buffer(buffer, {
 		plugins: [
 			imageminPngcrush({ reduce: true }),
 			imageminAdvpng({ optimizationLevel: 4 })
 		]
 	});
-};
+}
 
 async function main() {
 	const peerage = await readFileAsync(path.resolve(__dirname, 'peerage.geojson'));
 
-	console.log('Creating gist...');
-	const urls = await createGist('peerage.geojson', peerage, 'No Agenda Peerage Map');
+	const tasks = new Listr([
+		{
+			title: 'Creating gist',
+			task: async (ctx) => {
+				ctx.urls = await createGist('peerage.geojson', peerage, 'No Agenda Peerage Map');
+			}
+		},
+		{
+			title: 'Taking screenshot',
+			task: async (ctx) => {
+				const screenshotUrl = await getIframeUrl(ctx.urls.html);
+				ctx.image = await takeScreenshot(screenshotUrl, 1400, 800);
+			}
+		},
+		{
+			title: 'Optimizing screenshot',
+			task: async (ctx) => {
+				const optimizedImage = await optimizeImage(ctx.image);
+				return writeFileAsync('map.png', optimizedImage);
+			}
+		},
+		{
+			title: 'Opening gist to delete',
+			task: async (ctx) => opn(ctx.urls.html, {
+				wait: false
+			})
+		}
+	]);
 
-	console.log('Taking screenshot...');
-	const screenshotUrl = await getIframeUrl(urls.html);
-	const image = await takeScreenshot(screenshotUrl, 1400, 800);
-
-	console.log('Optimizing screenshot...');
-	const optimizedImage = await optimizeImage(image);
-	await writeFileAsync('map.png', optimizedImage);
-
-	try {
-		console.log('Cleaning up...');
-		await deleteGist(urls.api);
-	}
-	catch (err) {
-		console.log(`Couldn’t delete gist, please delete manually: ${urls.html}`);
-	}
+	await tasks.run();
+	console.log('');
 }
 
 main();

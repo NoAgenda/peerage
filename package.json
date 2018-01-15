@@ -36,7 +36,9 @@
     "imagemin-advpng": "^4.0.0",
     "imagemin-pngcrush": "^5.1.0",
     "js-beautify": "^1.7.5",
+    "listr": "^0.13.0",
     "npm-run-all": "^4.1.2",
+    "opn": "^5.2.0",
     "xo": "^0.18.2"
   },
   "xo": {
