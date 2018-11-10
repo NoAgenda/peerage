@@ -15,9 +15,9 @@
   "scripts": {
     "lint:geojson": "geojsonlint peerage.geojson protectorates/",
     "lint:js": "xo",
-    "normalize": "node normalize.js",
-    "compile": "node build.js",
-    "generate-map": "node generate-map.js",
+    "normalize": "node scripts/normalize.js",
+    "compile": "node scripts/build.js",
+    "generate-map": "node scripts/generate-map.js",
     "build": "npm-run-all normalize compile generate-map",
     "test": "npm-run-all lint:js lint:geojson"
   },
