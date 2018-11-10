@@ -1,4 +1,5 @@
 'use strict';
+require('dotenv').config();
 const { promisify } = require('util');
 const path = require('path');
 const { readFile, writeFile } = require('fs');
@@ -7,8 +8,7 @@ const imagemin = require('imagemin');
 const imageminAdvpng = require('imagemin-advpng');
 const imageminPngcrush = require('imagemin-pngcrush');
 const Listr = require('listr');
-const opn = require('opn');
-const screenshot = require('electron-screenshot-service');
+const puppeteer = require('puppeteer');
 
 const readFileAsync = promisify(readFile);
 const writeFileAsync = promisify(writeFile);
@@ -26,7 +26,10 @@ async function createGist(filename, contents, description = 'A Gist') {
 
 	const response = await got.post('https://api.github.com/gists', {
 		body: json,
-		json: true
+		json: true,
+		headers: {
+			Authorization: `token ${process.env.GIST_TOKEN}`
+		}
 	});
 
 	return {
@@ -35,10 +38,18 @@ async function createGist(filename, contents, description = 'A Gist') {
 	};
 }
 
+async function deleteGist(url) {
+	return got.delete(url, {
+		headers: {
+			Authorization: `token ${process.env.GIST_TOKEN}`
+		}
+	});
+}
+
 async function getIframeUrl(gistUrl) {
 	const url = `${gistUrl}.js`;
 	const response = await got(url);
-	const matches = response.body.match(/<iframe class=\\"render-viewer\\" src=\\"(.*)\\" sandbox/);
+	const matches = response.body.match(/<iframe class=\\"render-viewer\s?\\" src=\\"(.*)\\" sandbox/);
 
 	if (matches) {
 		return matches[1];
@@ -48,32 +59,37 @@ async function getIframeUrl(gistUrl) {
 }
 
 async function takeScreenshot(url, width = 1024, height = 768) {
-	try {
-		const img = await screenshot({
-			url,
-			width,
-			height,
-			delay: 5000,
-			css: `
-				.is-embedded .render-shell {
-					border: 0;
-				}
+	const browser = await puppeteer.launch();
+	const page = await browser.newPage();
 
-				.render-bar,
-				.leaflet-top.leaflet-left,
-				.mapbox-improve-map {
-					display: none !important;
-				}
-			`
-		});
+	await page.setViewport({
+		width,
+		height,
+		deviceScaleFactor: 2
+	});
 
-		screenshot.close();
-		return img.data;
-	}
-	catch (err) {
-		screenshot.close();
-		return null;
-	}
+	await page.goto(url, {
+		waitUntil: ['load', 'networkidle0']
+	});
+
+	await page.addStyleTag({
+		content: `
+			.is-embedded .render-shell {
+				border: 0;
+			}
+
+			.render-bar,
+			.leaflet-top.leaflet-left,
+			.mapbox-improve-map {
+				display: none !important;
+			}
+		`
+	});
+
+	const screenshot = await page.screenshot();
+	await browser.close();
+
+	return screenshot;
 }
 
 async function optimizeImage(buffer) {
@@ -85,7 +101,7 @@ async function optimizeImage(buffer) {
 	});
 }
 
-async function main() {
+(async () => {
 	const peerage = await readFileAsync(path.resolve(__dirname, 'peerage.geojson'));
 
 	const tasks = new Listr([
@@ -104,21 +120,23 @@ async function main() {
 		},
 		{
 			title: 'Optimizing screenshot',
+			enabled: () => !process.env.SKIP_OPTIMIZATION,
 			task: async (ctx) => {
-				const optimizedImage = await optimizeImage(ctx.image);
-				return writeFileAsync('map.png', optimizedImage);
+				ctx.image = await optimizeImage(ctx.image);
 			}
 		},
 		{
-			title: 'Opening gist to delete',
-			task: async (ctx) => opn(ctx.urls.html, {
-				wait: false
-			})
+			title: 'Writing screenshot',
+			task: async (ctx) => writeFileAsync('map.png', ctx.image)
+		},
+		{
+			title: 'Deleting gist',
+			task: async (ctx) => {
+				await deleteGist(ctx.urls.api);
+				console.log('done deleting');
+			}
 		}
 	]);
 
-	await tasks.run();
-	console.log('');
-}
-
-main();
+	return tasks.run();
+})();
