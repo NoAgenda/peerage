@@ -12,9 +12,9 @@ const readFileAsync = promisify(readFile);
 const writeFileAsync = promisify(writeFile);
 
 async function main() {
-	const protectorateDir = path.resolve(__dirname, './protectorates');
+	const protectorateDir = path.resolve(__dirname, '../protectorates');
 	const protectorates = readdirSync(protectorateDir).map((file) => {
-		return path.resolve(__dirname, './protectorates', file);
+		return path.resolve(__dirname, '../protectorates', file);
 	});
 
 	each(protectorates, async (file) => {

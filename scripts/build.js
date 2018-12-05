@@ -12,7 +12,7 @@ const beautify = require('js-beautify');
 const readFileAsync = promisify(readFile);
 
 async function main() {
-	const protectorateDir = path.resolve(__dirname, './protectorates');
+	const protectorateDir = path.resolve(__dirname, '../protectorates');
 	const protectorates = readdirSync(protectorateDir);
 
 	map(protectorates, async (file) => {
@@ -43,7 +43,7 @@ async function main() {
 			brace_style: 'end-expand' // eslint-disable-line camelcase
 		});
 
-		const outFile = path.resolve(__dirname, './peerage.geojson');
+		const outFile = path.resolve(__dirname, '../peerage.geojson');
 		writeFileSync(outFile, beautified);
 	});
 }
