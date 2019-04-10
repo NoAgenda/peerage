@@ -3,7 +3,7 @@
 const { promisify } = require('util');
 const path = require('path');
 const { readFile, readdirSync, writeFileSync } = require('fs');
-const { map } = require('async');
+const map = require('async/map');
 const area = require('@turf/area');
 const { featureCollection } = require('@turf/helpers');
 const truncate = require('@turf/truncate');

@@ -102,7 +102,7 @@ async function optimizeImage(buffer) {
 }
 
 (async () => {
-	const peerage = await readFileAsync(path.resolve(__dirname, 'peerage.geojson'));
+	const peerage = await readFileAsync(path.resolve(__dirname, '../', 'peerage.geojson'));
 
 	const tasks = new Listr([
 		{
