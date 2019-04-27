@@ -14,6 +14,7 @@ There are two primary sources for shapefiles that I’ve found:
 
 1. Country data from [DIVA-GIS](http://www.diva-gis.org/gData)
 2. Congressional districts from [The United States Project](https://github.com/unitedstates/districts)
+3. Historical county data from [Atlas of Historical County Boundaries](https://publications.newberry.org/ahcbp/index.html)
 
 Those only cover specific administrative regions, however.
 
@@ -29,6 +30,12 @@ The shape files can then be converted with the following command, replacing the 
 
 ```
 ogr2ogr -f GeoJSON -t_srs crs:84 output.geojson input.shp
+```
+
+To pull boundaries of historical counties, use the `-where` option with the date in `YYYYMMDD` format:
+
+```
+ogr2ogr -f GeoJSON -t_srs crs:84 -where '"START_N" <= 18450101 AND "END_N" >= 18450101' texas1845.geojson TX_Historical_Counties.shp
 ```
 
 ### 2. Remove unnecessary features and simplify
