@@ -4,8 +4,8 @@
 		"type": "Feature",
 		"properties": {
 			"name": "Texas",
-			"description": "Protectorate of Sir Gene Naftulyev, Earl of Austin, Baron de Marriot, Sheriff of Texas",
-			"title": "Earl"
+			"description": "Protectorate of Sir Gene Naftulyev, Duke of the Republic of Texas",
+			"title": "Duke"
 		},
 		"geometry": {
 			"type": "MultiPolygon",
