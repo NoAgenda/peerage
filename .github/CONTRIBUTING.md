@@ -69,7 +69,7 @@ A separate file is created for each Knight. Each one should be a FeatureCollecti
 			"name": "[Protectorate]",
 			"description": "Protectorate of [Knight], [Title] of [Protectorate]",
 			"title": "[Title]",
-			"proof": "[No Agenda Player short link]"
+			"proof": "[noagendashow.net link to segment]"
 		},
 		"geometry": {
 

@@ -16,7 +16,6 @@ Make sure to include the following info when emailing or creating an issue:
 
 1. Your name and title
 2. The location of your protectorate
-3. A link to the segment of the show on [No Agenda Player](https://www.noagendaplayer.com) for proof
+3. A link to the segment of the show on [the official show page](https://www.noagendashow.net/archive) for proof
 
-Providing a map of your protectorate is always helpful to make sure that it’s
-correct.
+Providing a map of your protectorate is always helpful to make sure that it’s correct.
