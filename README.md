@@ -19,3 +19,7 @@ Make sure to include the following info when emailing or creating an issue:
 3. A link to the segment of the show on [the official show page](https://www.noagendashow.net/archive) for proof
 
 Providing a map of your protectorate is always helpful to make sure that it’s correct.
+
+## Other Maps
+
+- [No Agenda Meetups Map](https://noagendamap.com)
