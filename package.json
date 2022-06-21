@@ -31,7 +31,7 @@
     "dotenv": "^8.1.0",
     "eslint-config-bdougherty": "^5.1.1",
     "geojsonlint": "^1.0.3",
-    "got": "^9.6.0",
+    "got": "^11.8.5",
     "imagemin": "^7.0.0",
     "imagemin-advpng": "^5.0.0",
     "imagemin-pngcrush": "^6.0.0",
